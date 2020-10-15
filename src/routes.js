@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Feed from "./feed";
 
 import logo from '../assets/instagram.png';
+import DetailSpend from './detail';
 
 const Stack = createStackNavigator();
 
@@ -21,7 +22,9 @@ export default function Routes() {
                     },
                 }}
             >
-                <Stack.Screen name="Feed" component={Feed} />
+                <Stack.Screen name="Contele" component={Feed}   options={{ headerShown: false}}/>
+                <Stack.Screen header="null" name="Detail" 
+                    component={DetailSpend}  options={{ headerShown: false}}/>
             </Stack.Navigator>
         </NavigationContainer >
     )

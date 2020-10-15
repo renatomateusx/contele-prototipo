@@ -1,50 +1,55 @@
 import React, { useEffect, useState } from 'react';
-import { Animated } from 'react-native';
-import { Small, Original } from './styles';
-
-const AnimatedOriginal = Animated.createAnimatedComponent(Original);
-
-export default function LazyImage({
-    smallSource,
-    source,
-    shouldLoad = false,
-    aspectRatio = 1,
+import {
+    Container, Box, Header, Body, MiniBox, Price,
+    IconView, TopBox, BoxPrice, IconViewDollar, ButtonAction
+} from './styles';
+import { ScrollView, FlatList } from 'react-native-gesture-handler';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import DetailSpend from '../detail';
+import { navigation } from '../navigation';
+import { NavigationActions } from 'react-navigation';
+import IconDollar from 'react-native-vector-icons/Feather';
+Icon.loadFont();
+IconDollar.loadFont();
+export default function LazyGrid({
+    navigation,
+    title,
+    type,
+    price,
+    anulled
 }) {
-    const opacity = new Animated.Value(0);
-    const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        if (shouldLoad) {
-            setTimeout(() => {
-                setLoaded(true);
-            }, 1000);
-        }
-    }, [shouldLoad])
+        console.log(navigation);
+    });
 
-    function handleAnimate() {
-        Animated.timing(opacity, {
-            duration: 500,
-            toValue: 1,
-            useNativeDriver: true,
-        }).start();
+    const onPress = () => {
+        navigation.navigate('Detail');
     }
 
+
     return (
-        <Small
-            source={smallSource}
-            aspect={aspectRatio}
-            resizeMode="contain"
-            blurRadius={3}
-        >
-            {loaded && (
-                <AnimatedOriginal
-                style={{opacity}}
-                onLoadEnd={handleAnimate}
-                source={source}
-                aspect={aspectRatio}
-                resizeMode="contain"
-                />
-            )}
-        </Small>
+        <Container anulled={anulled}>
+            <ButtonAction anulled={anulled}
+                onPress={onPress}
+            >
+                <TopBox anulled={anulled}>
+                    <Box>
+                        <Header anulled={anulled}>{title}</Header>
+                        <MiniBox>
+                            <IconView><Icon name="restaurant" size={15} color="#9dadb8" /></IconView>
+                            <Body>{type}</Body>
+                        </MiniBox>
+                    </Box>
+                    <BoxPrice>
+                        <MiniBox>
+                            {price.length > 0 && (<IconViewDollar><IconDollar name="dollar-sign" size={20} color={anulled ? 'grey' : '#44db81'} /></IconViewDollar>)}
+                            <Price>{price}</Price>
+                        </MiniBox>
+
+                    </BoxPrice>
+                </TopBox>
+            </ButtonAction>
+        </Container>
     );
 }
