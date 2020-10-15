@@ -13,8 +13,7 @@
         "authorId": 1
       },
       {
-        "id": 2,
-        "month": "Setembro",
+        "id": 2,        
         "day": "20",
         "weekDay": "Quarta",
         "typeConsumer": "Alimentação",
@@ -25,8 +24,7 @@
         "authorId": 2
       },
       {
-        "id": 3,
-        "month": "Setembro",
+        "id": 3,        
         "day": "14",
         "weekDay": "Segunda",
         "typeConsumer": "Alimentação",
