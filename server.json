@@ -10,6 +10,7 @@
         "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/1.jpeg",
         "aspectRatio": 0.834,
         "description": "Working hard at React Native!",
+<<<<<<< HEAD
         "authorId": 1,
         "items":[
             {
@@ -25,6 +26,9 @@
                 "price": "326,00"
             }
         ]
+=======
+        "authorId": 1
+>>>>>>> 5da64642e66ed4d81a5fbfb079882d175afdf77f
       },
       {
         "id": 2,        
@@ -35,6 +39,7 @@
         "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/2.jpeg",
         "aspectRatio": 0.834,
         "description": "Code, code and more code!",
+<<<<<<< HEAD
         "authorId": 2,
         "items":[
             {
@@ -50,6 +55,9 @@
                 "price": "326,00"
             }
         ]
+=======
+        "authorId": 2
+>>>>>>> 5da64642e66ed4d81a5fbfb079882d175afdf77f
       },
       {
         "id": 3,        
